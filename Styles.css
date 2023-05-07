@@ -18,11 +18,19 @@ body {
 
 nav {
     width: 80%;
+    display: flex;
+    justify-content: end;
+}
+
+nav ul a {
+    margin-left: 20px;
+}
+
+nav ul {
+    margin-right: 10%;
 }
 
 nav ul li {
-    position: relative;
-    left: 80%;
     display: inline-block;
     background-color: #141010;
     color: white;
@@ -108,5 +116,7 @@ h4 {
 }
 
 #my-picture-area img {
-    width: 80%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #043539, 0 0 5px #043539, 0 0 8px #043539, 0 0 10px;
 }
