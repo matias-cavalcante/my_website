@@ -10,12 +10,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0;
+    background-color: #141010;
 }
 
 /*--------Styles start below----------*/
 
 nav {
-    background-color: orange;
     width: 80%;
 }
 
@@ -23,6 +24,8 @@ nav ul li {
     position: relative;
     left: 80%;
     display: inline-block;
+    background-color: #141010;
+    color: white;
 }
 
 main {
@@ -44,8 +47,6 @@ main {
     justify-content: center;
     align-items: start;
     flex-direction: column;
-
-    background-color: green;
 }
 
 #intro-text-area h1,
@@ -54,6 +55,41 @@ h4,
     position: relative;
     left: 5%;
 }
+
+#intro-text-area h1 {
+    font-size: 4em;
+    font-weight: bold;
+    color: #65C7CF;
+}
+
+
+#intro-text-area h1,
+h4 {
+    margin: 0px;
+}
+
+h4 {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 5%;
+}
+
+
+#cta-button {
+    width: 50%;
+    min-height: 45px;
+}
+
+#call-to-action {
+    width: 50%;
+    height: 100%;
+    border: none;
+    background-color: #490E43;
+    color: white;
+}
+
+
 
 /*right side of the main area*/
 
@@ -64,7 +100,6 @@ h4,
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
 }
 
 #my-picture-area img {
