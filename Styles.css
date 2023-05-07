@@ -6,7 +6,8 @@ html {
 body,
 nav,
 main,
-#intro-text-area {
+#intro-text-area,
+#my-picture-area {
     display: flex;
     justify-content: center;
 }
@@ -36,19 +37,15 @@ nav ul li {
     color: white;
 }
 
+/*--------MAIN & CHILDREN----------*/
+
 main {
     width: 80%;
     height: 75vh;
+    /*Might change to more flexible later*/
 }
 
-/*Left side of the main section*/
-
-#intro-text-area {
-    width: 65%;
-    margin-left: 5%;
-    align-items: start;
-    flex-direction: column;
-}
+/*LEFT HALF main*/
 
 #intro-text-area h1,
 h4,
@@ -57,19 +54,24 @@ h4,
     left: 5%;
 }
 
+#intro-text-area h1,
+h4 {
+    margin: 0px;
+}
+
+/*---*/
+
+#intro-text-area {
+    width: 65%;
+    margin-left: 5%;
+    align-items: start;
+    flex-direction: column;
+}
+
 #intro-text-area h1 {
     font-size: 4em;
     font-weight: bold;
     color: #65C7CF;
-    /*text-shadow: 0 0 2px #042325, 0 0 5px #042325, 0 0 8px #042325, 0 0 10px;*/
-}
-
-/*    box-shadow: 0 0 5px 3px #81cad1;
-*/
-
-#intro-text-area h1,
-h4 {
-    margin: 0px;
 }
 
 h4 {
@@ -78,7 +80,6 @@ h4 {
     color: white;
     margin-bottom: 5%;
     margin-top: 3%;
-
 }
 
 #cta-button {
@@ -88,22 +89,18 @@ h4 {
 
 #call-to-action {
     width: 50%;
+    /*Test latter on responsive. Might need fixed values*/
     height: 100%;
     border: none;
     background-color: #490E43;
     color: white;
 }
 
-
-
-
-/*right side of the main area*/
+/*RIGHT HALF main*/
 
 #my-picture-area {
     width: 35%;
     margin-right: 5%;
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -112,7 +109,6 @@ h4 {
     height: 305px;
     border-radius: 50%;
     z-index: 9;
-    /*box-shadow: 0 0 3px #043539, 0 0 6px #043539, 0 0 9px #043539, 0 0 1px;*/
 }
 
 #image-glowing-ring {
@@ -120,7 +116,7 @@ h4 {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-
+    /*Animation values*/
     animation: glowInOut 3s;
     animation-iteration-count: infinite;
     z-index: 4;
