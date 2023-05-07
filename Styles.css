@@ -60,8 +60,11 @@ h4,
     font-size: 4em;
     font-weight: bold;
     color: #65C7CF;
+    text-shadow: 0 0 2px #043539, 0 0 5px #043539, 0 0 8px #043539, 0 0 10px;
 }
 
+/*    box-shadow: 0 0 5px 3px #81cad1;
+*/
 
 #intro-text-area h1,
 h4 {
@@ -73,8 +76,9 @@ h4 {
     font-weight: 400;
     color: white;
     margin-bottom: 5%;
-}
+    margin-top: 3%;
 
+}
 
 #cta-button {
     width: 50%;
@@ -88,6 +92,7 @@ h4 {
     background-color: #490E43;
     color: white;
 }
+
 
 
 
