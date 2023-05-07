@@ -1,24 +1,25 @@
 html {
-    margin: 0;
-    padding: 0;
-
     font-family: 'Open Sans', sans-serif;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0;
     background-color: #141010;
 }
 
-/*--------Styles start below----------*/
+body,
+nav,
+main,
+#intro-text-area {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    align-items: center;
+    flex-direction: column;
+}
+
+/*--------NAV----------*/
 
 nav {
     width: 80%;
-    display: flex;
     justify-content: end;
 }
 
@@ -32,17 +33,12 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    background-color: #141010;
     color: white;
 }
 
 main {
     width: 80%;
     height: 75vh;
-    display: flex;
-    justify-content: center;
-
-    background-color: #141010;
 }
 
 /*Left side of the main section*/
@@ -50,9 +46,6 @@ main {
 #intro-text-area {
     width: 65%;
     margin-left: 5%;
-
-    display: flex;
-    justify-content: center;
     align-items: start;
     flex-direction: column;
 }
@@ -68,7 +61,7 @@ h4,
     font-size: 4em;
     font-weight: bold;
     color: #65C7CF;
-    text-shadow: 0 0 2px #043539, 0 0 5px #043539, 0 0 8px #043539, 0 0 10px;
+    /*text-shadow: 0 0 2px #042325, 0 0 5px #042325, 0 0 8px #042325, 0 0 10px;*/
 }
 
 /*    box-shadow: 0 0 5px 3px #81cad1;
@@ -109,14 +102,44 @@ h4 {
 #my-picture-area {
     width: 35%;
     margin-right: 5%;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #my-picture-area img {
-    width: 100%;
+    width: 305px;
+    height: 305px;
     border-radius: 50%;
-    box-shadow: 0 0 2px #043539, 0 0 5px #043539, 0 0 8px #043539, 0 0 10px;
+    z-index: 9;
+    /*box-shadow: 0 0 3px #043539, 0 0 6px #043539, 0 0 9px #043539, 0 0 1px;*/
+}
+
+#image-glowing-ring {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+    animation: glowInOut 3s;
+    animation-iteration-count: infinite;
+    z-index: 4;
+}
+
+
+@keyframes glowInOut {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 3px #043539, 0 0 6px #043539, 0 0 9px #043539, 0 0 12px #043539;
+    }
+
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 7px #32949d, 0 0 14px #32949d, 0 0 21px #32949d, 0 0 28px #32949d;
+    }
+
+    100% {
+        opacity: 0.2;
+        box-shadow: 0 0 5px #1b5f65, 0 0 10px #1b5f65, 0 0 15px #1b5f65, 0 0 20px #1b5f65;
+    }
 }
