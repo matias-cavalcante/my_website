@@ -70,8 +70,14 @@ h4 {
 
 #intro-text-area h1 {
     font-size: 4em;
-    font-weight: bold;
+    font-weight: 600;
     color: #65C7CF;
+}
+
+#intro-text-area h1 span {
+    animation: underscoreInOut;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
 }
 
 h4 {
@@ -94,6 +100,11 @@ h4 {
     border: none;
     background-color: #490E43;
     color: white;
+
+    animation: buttonChangeShape;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
 }
 
 /*RIGHT HALF main*/
@@ -116,26 +127,37 @@ h4 {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    /*Animation values*/
-    animation: glowInOut 3s;
-    animation-iteration-count: infinite;
+
+    box-shadow: 0 0 5px #043539, 0 0 8px #043539, 0 0 11px #043539, 0 0 14px #043539;
     z-index: 4;
 }
 
+@keyframes underscoreInOut {
 
-@keyframes glowInOut {
-    0% {
+    0%,
+    49% {
+        opacity: 0;
+    }
+
+    50%,
+    100% {
         opacity: 1;
-        box-shadow: 0 0 3px #043539, 0 0 6px #043539, 0 0 9px #043539, 0 0 12px #043539;
+    }
+
+}
+
+@keyframes buttonChangeShape {
+
+    0%,
+    100% {
+        border-radius: 0px;
+        width: 50%;
     }
 
     50% {
-        opacity: 0.5;
-        box-shadow: 0 0 7px #32949d, 0 0 14px #32949d, 0 0 21px #32949d, 0 0 28px #32949d;
-    }
-
-    100% {
-        opacity: 0.2;
-        box-shadow: 0 0 5px #1b5f65, 0 0 10px #1b5f65, 0 0 15px #1b5f65, 0 0 20px #1b5f65;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        width: 60%;
+        box-shadow: 2.5px 0 10px #b055a7;
     }
 }
