@@ -17,6 +17,11 @@ body {
     flex-direction: column;
 }
 
+a:hover,
+button:hover {
+    cursor: pointer;
+}
+
 /*--------NAV----------*/
 
 nav {
@@ -27,6 +32,10 @@ nav {
 nav ul a {
     margin-left: 20px;
     font-weight: 300;
+}
+
+nav ul a:hover {
+    color: #65C7CF;
 }
 
 nav ul {
@@ -105,9 +114,13 @@ h4 {
     color: white;
 
     animation: buttonChangeShape;
-    animation-duration: 7s;
+    animation-duration: 5s;
     animation-iteration-count: 1;
     animation-delay: 0s;
+}
+
+#call-to-action:hover {
+    background-color: #6b1763;
 }
 
 /*RIGHT HALF main*/
@@ -167,4 +180,45 @@ h4 {
         box-shadow: none;
         border-radius: 0px;
     }
+}
+
+
+
+
+
+
+
+/*-------- PROJECTS-SECTION ----------*/
+
+#projects-section {
+    width: 80%;
+    background-color: red;
+}
+
+.phone-project-card {
+    display: flex;
+    height: 70vh;
+}
+
+.phone-project-card h2,
+.phone-project-card p,
+.phone-project-card button {
+    color: white;
+}
+
+.phone-card-text {
+    width: 60%;
+}
+
+.phone-card-img {
+    width: 40%;
+    background-color: green;
+}
+
+.phone-card-img img {
+    width: 40%;
+    position: relative;
+    float: right;
+    right: 20%;
+    top: 10%;
 }
