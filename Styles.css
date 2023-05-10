@@ -26,6 +26,7 @@ button:hover {
 
 nav {
     width: 80%;
+    height: 10%;
     justify-content: end;
 }
 
@@ -51,7 +52,7 @@ nav ul li {
 
 main {
     width: 80%;
-    height: 75vh;
+    height: 90vh;
     /*Might change to more flexible later*/
     margin-bottom: 5px;
 }
@@ -112,9 +113,8 @@ h4 {
     position: relative;
     border: none;
     border-radius: 8px;
-    /*background-color: #490E43;*/
+    font-size: 0.9em;
     background-image: radial-gradient(circle 897px at 9% 80.3%, #490E43 0%, white 100.2%);
-
     color: white;
 
     animation: buttonChangeShape;
@@ -166,7 +166,6 @@ h4 {
 
 }
 
-
 @keyframes buttonChangeShape {
     0% {
         opacity: 0;
@@ -184,14 +183,36 @@ h4 {
     }
 }
 
-
+/*--------MY PROJECTS SECTION----------*/
 
 #my-projects {
     width: 80%;
+    height: 90vh;
+    margin-top: 10vh;
     position: relative;
+}
 
+#my-projects h2 {
+    color: #65C7CF;
+}
+
+#my-projects h2,
+#my-projects h3 {
+    width: 86%;
+    position: relative;
+    left: 7%;
+}
+
+#my-projects h3 {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: white;
+}
+
+#cards {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 5vh;
 }
 
 .project-container {
@@ -201,8 +222,6 @@ h4 {
     border-radius: 10px;
     background-color: #022124;
     box-shadow: 1px 0 1px #043539, -1px 0 4px #043539, 1px 0 7px #043539, -1px 0 10px #043539;
-
-
 }
 
 .project-container img {
@@ -233,6 +252,9 @@ h4 {
     border-radius: 5px;
     padding-top: 8px;
     padding-bottom: 8px;
-    /*background-color: #490E43;*/
     background-image: radial-gradient(circle 897px at 9% 80.3%, #490E43 0%, rgb(202, 195, 195) 100.2%);
+}
+
+#visit:hover {
+    background-image: radial-gradient(circle 897px at 9% 80.3%, #77056c 0%, rgb(202, 195, 195) 100.2%);
 }
