@@ -1,5 +1,5 @@
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
     background-color: #000000;
 }
 
@@ -90,11 +90,11 @@ h4 {
     animation: underscoreInOut;
     animation-duration: 1.6s;
     animation-iteration-count: infinite;
-    animation-delay: 8s;
+    animation-delay: 2s;
 }
 
 h4 {
-    font-size: 0.9em;
+    font-size: 1.1em;
     font-weight: 300;
     color: white;
     margin-bottom: 5%;
@@ -118,7 +118,7 @@ h4 {
     color: white;
 
     animation: buttonChangeShape;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-iteration-count: 1;
     animation-delay: 0s;
 }
@@ -189,24 +189,27 @@ h4 {
     width: 80%;
     height: 90vh;
     margin-top: 10vh;
+    margin-bottom: 5px;
     position: relative;
 }
 
 #my-projects h2 {
+    width: 86%;
+    position: relative;
+    left: 6.5%;
     color: #65C7CF;
 }
 
-#my-projects h2,
-#my-projects h3 {
-    width: 86%;
+.my-projects-intro-p {
+    width: 85%;
     position: relative;
-    left: 7%;
+    left: 6.5%;
+    font-size: 1.1em;
+    color: white;
 }
 
-#my-projects h3 {
-    font-size: 0.9em;
-    font-weight: 300;
-    color: white;
+span {
+    color: #65C7CF;
 }
 
 #cards {
@@ -235,11 +238,11 @@ h4 {
 
 .project-container {
     width: 25%;
-    min-height: 325px;
     display: inline-block;
+    padding-bottom: 15px;
     border-radius: 10px;
-    background-color: #022124;
-    box-shadow: 1px 0 1px #043539, -1px 0 4px #043539, 1px 0 7px #043539, -1px 0 10px #043539;
+    background-color: black;
+    box-shadow: 1px 0 2px #043539, -1px 0 5px #043539, 1px 0 8px #043539, -1px 0 11px #043539;
 }
 
 .project-container img {
@@ -253,7 +256,7 @@ h4 {
     width: 90%;
     position: relative;
     left: 5%;
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
 .project-container h3,
@@ -311,18 +314,53 @@ h4 {
 
 #about-me {
     width: 80%;
+    margin-top: 10vh;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#about-me img {
+    width: 25%;
+}
+
+#about-me-text {
+    width: 60%;
+}
+
+#about-me-text h2 {
+    color: #65C7CF
+}
+
+#about-me-text p {
+    font-size: 1.1em;
     color: white;
-
 }
 
-#about-me h2,
-#about-me h3 {
-    position: relative;
-    left: 5%;
+/*--------FOOTER ----------*/
+
+footer {
+    width: 90%;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
 }
 
-#about-me p {
-    width: 88%;
+#connect {
+    color: #65C7CF
+}
+
+footer ul {
+    padding: 0px;
+}
+
+footer ul img {
+    max-width: 40px;
     position: relative;
-    left: 5%;
+    left: 0%;
+}
+
+footer h4 {
+    left: 0%;
 }
