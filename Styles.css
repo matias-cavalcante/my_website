@@ -306,3 +306,23 @@ h4 {
         opacity: 1;
     }
 }
+
+/*--------ABOUT ME ----------*/
+
+#about-me {
+    width: 80%;
+    color: white;
+
+}
+
+#about-me h2,
+#about-me h3 {
+    position: relative;
+    left: 5%;
+}
+
+#about-me p {
+    width: 88%;
+    position: relative;
+    left: 5%;
+}
