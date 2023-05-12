@@ -364,3 +364,45 @@ footer ul img {
 footer h4 {
     left: 0%;
 }
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 1160px) {
+    main {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    main #intro-text-area {
+        height: fit-content;
+        width: 90%;
+        margin-left: 0%;
+    }
+
+    main #intro-text-area h1 {
+        font-size: 2em;
+    }
+
+    main #intro-text-area h4 {
+        font-size: 0.9em;
+    }
+
+    #cta-button {
+        display: none;
+    }
+
+    /*-----------------------*/
+
+    #my-picture-area {
+        height: fit-content;
+        width: auto;
+        margin-right: 0%;
+    }
+
+    #image-glowing-ring,
+    #my-picture-area img {
+        width: 250px;
+        height: 250px;
+    }
+}
