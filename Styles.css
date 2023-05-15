@@ -3,14 +3,14 @@ html {
     font-family: sans-serif;
     background-color: #000000;
     scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
 }
 
 body,
 nav,
 #my-picture-area {
     max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     align-items: center;
 }
@@ -312,7 +312,7 @@ span {
     box-shadow: 1px 0 2px #043539, -1px 0 5px #043539, 1px 0 8px #043539, -1px 0 11px #043539;
 }
 
-.project-container h3,
+
 .project-container p,
 .visit {
     position: relative;
