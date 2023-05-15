@@ -8,6 +8,7 @@ html {
 body,
 nav,
 #my-picture-area {
+    max-width: 1280px;
     display: flex;
     align-items: center;
 }
