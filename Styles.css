@@ -1,20 +1,21 @@
+/*General declarations*/
 html {
     font-family: sans-serif;
     background-color: #000000;
+    scroll-behavior: smooth;
 }
 
 body,
 nav,
-main,
-#intro-text-area,
 #my-picture-area {
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 body {
-    align-items: center;
     flex-direction: column;
+    margin: 0;
+    color: white;
 }
 
 a:hover,
@@ -22,62 +23,139 @@ button:hover {
     cursor: pointer;
 }
 
+h4 {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
 /*--------NAV----------*/
 
+#hamburger {
+    font-size: 1.9em;
+    display: none;
+    z-index: 9999;
+}
+
 nav {
-    width: 80%;
-    height: 10%;
-    justify-content: end;
+    width: 70%;
+}
+
+nav div,
+nav ul {
+    width: 50%;
+}
+
+nav div a {
+    text-decoration: none;
+}
+
+nav div a h3 {
+    font-size: 1em;
+    font-weight: 300;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav ul a {
     margin-left: 20px;
     font-weight: 300;
+    text-decoration: none;
+    color: white;
 }
 
 nav ul a:hover {
     color: #65C7CF;
 }
 
-nav ul {
-    margin-right: 10%;
-}
-
 nav ul li {
     display: inline-block;
+}
+
+#mobile-nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    background-color: rgba(44, 106, 115, 0.4);
+
+    transform: translateY(-100%);
+    transition: transform 0.5s ease, visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+
+#mobile-nav.active {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+#mobile-nav ul {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: 20%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+
+}
+
+#mobile-nav ul li {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+#mobile-nav ul li a {
+    text-decoration: none;
     color: white;
 }
+
+.disable-scroll {
+    overflow: hidden;
+}
+
 
 /*--------MAIN & CHILDREN----------*/
 
 main {
-    width: 80%;
-    height: 90vh;
-    /*Might change to more flexible later*/
+    width: 70%;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     margin-bottom: 5px;
+    margin-top: 2.6%;
 }
 
 /*LEFT HALF main*/
 
-#intro-text-area h1,
-h4,
-#cta-button {
-    position: relative;
-    left: 5%;
-}
-
-#intro-text-area h1,
-h4 {
-    margin: 0px;
-}
-
-/*---*/
-
 #intro-text-area {
-    width: 65%;
-    margin-left: 5%;
-    align-items: start;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#intro-text-area h1,
+#intro-text-area h4 {
+    margin: 0px;
 }
 
 #intro-text-area h1 {
@@ -93,30 +171,26 @@ h4 {
     animation-delay: 2s;
 }
 
-h4 {
-    font-size: 1.1em;
-    font-weight: 300;
-    color: white;
-    margin-bottom: 5%;
-    margin-top: 3%;
-}
-
 #cta-button {
-    width: 50%;
-    min-height: 45px;
+    height: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
 }
 
 #call-to-action {
-    width: 50%;
-    /*Test latter on responsive. Might need fixed values*/
     height: 100%;
-    position: relative;
+    width: 50%;
+    max-width: 175px;
+    max-height: 50px;
     border: none;
     border-radius: 8px;
     font-size: 0.9em;
-    background-image: radial-gradient(circle 897px at 9% 80.3%, #490E43 0%, white 100.2%);
     color: white;
-
+    background-image: radial-gradient(circle 897px at 9% 80.3%, #490E43 0%, white 100.2%);
     animation: buttonChangeShape;
     animation-duration: 3s;
     animation-iteration-count: 1;
@@ -130,16 +204,15 @@ h4 {
 /*RIGHT HALF main*/
 
 #my-picture-area {
-    width: 35%;
-    margin-right: 5%;
-    align-items: center;
+    justify-content: center;
+    grid-column-start: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
 }
 
 #my-picture-area img {
-    width: 305px;
-    height: 305px;
-    border-radius: 50%;
-    z-index: 9;
+    max-width: 305px;
+    max-height: 305px;
 }
 
 #image-glowing-ring {
@@ -147,9 +220,8 @@ h4 {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-
     box-shadow: 0 0 5px #043539, 0 0 8px #043539, 0 0 11px #043539, 0 0 14px #043539;
-    z-index: 4;
+    z-index: 999;
 }
 
 @keyframes underscoreInOut {
@@ -163,7 +235,6 @@ h4 {
     100% {
         opacity: 1;
     }
-
 }
 
 @keyframes buttonChangeShape {
@@ -186,26 +257,19 @@ h4 {
 /*--------MY PROJECTS SECTION----------*/
 
 #my-projects {
-    width: 80%;
-    height: 90vh;
-    margin-top: 10vh;
+    width: 70%;
+    margin-top: 5vh;
     margin-bottom: 5px;
-    position: relative;
 }
 
 #my-projects h2 {
-    width: 86%;
-    position: relative;
-    left: 6.5%;
+    width: 100%;
     color: #65C7CF;
 }
 
 .my-projects-intro-p {
-    width: 85%;
-    position: relative;
-    left: 6.5%;
+    width: 100%;
     font-size: 1.1em;
-    color: white;
 }
 
 span {
@@ -214,8 +278,8 @@ span {
 
 #cards {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 5vh;
+    justify-content: space-between;
+    margin-top: 5%;
 }
 
 #card-qatar,
@@ -245,6 +309,13 @@ span {
     box-shadow: 1px 0 2px #043539, -1px 0 5px #043539, 1px 0 8px #043539, -1px 0 11px #043539;
 }
 
+.project-container h3,
+.project-container p,
+.visit {
+    position: relative;
+    left: 5%;
+}
+
 .project-container img {
     width: 100%;
     height: 130px;
@@ -254,26 +325,18 @@ span {
 
 .project-container p {
     width: 90%;
-    position: relative;
-    left: 5%;
     font-size: 1.1em;
 }
 
-.project-container h3,
-.project-container p,
-.visit {
-    position: relative;
-    left: 5%;
-    color: white;
-}
 
 .visit {
-    width: 40%;
+    width: 90%;
     border: 0;
     border-radius: 5px;
     padding-top: 8px;
     padding-bottom: 8px;
     background-image: radial-gradient(circle 897px at 9% 80.3%, #490E43 0%, rgb(202, 195, 195) 100.2%);
+    color: white;
 }
 
 .visit:hover {
@@ -313,20 +376,20 @@ span {
 /*--------ABOUT ME ----------*/
 
 #about-me {
-    width: 80%;
-    margin-top: 10vh;
+    width: 70%;
+    margin-top: 5vh;
     margin-bottom: 5px;
     display: flex;
     justify-content: space-evenly;
 }
 
 #about-me img {
-    width: 25%;
+    align-self: center;
+    max-width: 20%;
+    max-height: 175px;
+    min-width: 200px;
 }
 
-#about-me-text {
-    width: 60%;
-}
 
 #about-me-text h2 {
     color: #65C7CF
@@ -342,6 +405,7 @@ span {
 footer {
     width: 90%;
     margin-top: 10vh;
+    margin-right: 0px;
     display: flex;
     justify-content: space-evenly;
     color: white;
@@ -352,7 +416,13 @@ footer {
 }
 
 footer ul {
+    display: block;
     padding: 0px;
+    list-style: none;
+}
+
+footer ul li {
+    display: inline-block;
 }
 
 footer ul img {
@@ -361,48 +431,162 @@ footer ul img {
     left: 0%;
 }
 
+
 footer h4 {
     left: 0%;
+}
+
+#foot-contact ul img {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 1160px) {
+    nav {
+        width: 90%;
+    }
+
+    nav ul li a {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
     main {
         width: 90%;
-        flex-wrap: wrap;
+        grid-template-rows: auto auto auto;
     }
 
-    main #intro-text-area {
-        height: fit-content;
+    #intro-text-area,
+    #my-picture-area,
+    #cta-button {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+
+    #intro-text-area {
+        align-items: center;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin-bottom: 5%;
+    }
+
+    #intro-text-area h4 {
         width: 90%;
-        margin-left: 0%;
+        text-align: center;
     }
 
-    main #intro-text-area h1 {
-        font-size: 2em;
-    }
-
-    main #intro-text-area h4 {
-        font-size: 0.9em;
+    #my-picture-area {
+        grid-row-start: 2;
+        grid-row-end: 3;
     }
 
     #cta-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    #call-to-action {
+        min-height: 35px;
+        max-width: 300px;
+        margin-top: 10%;
+        width: 100%;
+    }
+
+    #cards {
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #my-projects {
+        width: 90%;
+    }
+
+    .project-container {
+        width: 50%;
+        max-width: 265px;
+        margin-top: 10%;
+    }
+
+    #about-me {
+        width: 90%;
+        flex-direction: column-reverse;
+    }
+
+    #about-me img {
+        align-self: center;
+    }
+}
+
+/*break here to next section*/
+
+
+@media screen and (max-width: 660px) {
+    nav ul {
         display: none;
     }
 
-    /*-----------------------*/
-
-    #my-picture-area {
-        height: fit-content;
-        width: auto;
-        margin-right: 0%;
+    #hamburger {
+        display: flex;
+        justify-content: end;
     }
 
-    #image-glowing-ring,
-    #my-picture-area img {
-        width: 250px;
-        height: 250px;
+    .project-container {
+        width: 100%;
+    }
+
+    .project-container img {
+        height: fit-content;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .animate #card-qatar {
+        animation: cardThreeIn 1s 1.5s forwards;
+    }
+
+    .animate #card-bubble {
+        animation: cardTwoIn 1s 1s forwards;
+    }
+
+    .animate #card-icegas {
+        animation: cardOneIn 1s 0.5s forwards;
+    }
+
+}
+
+@media screen and (max-width: 575px) {
+
+    nav ul {
+        display: none;
+    }
+
+    #intro-text-area h1 {
+        width: 100%;
+        font-size: 2.6em;
+        margin-bottom: 5%;
+    }
+
+    #intro-text-area h4 {
+        width: 100%;
+        text-align: start;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .project-container {
+        max-width: unset;
+        width: 100%;
     }
 }

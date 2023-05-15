@@ -21,23 +21,44 @@
 
 <body>
 
-    <nav>
+    <nav id="nav-bar">
+        <div>
+            <a href="#nav-bar">
+                <h3><span style="color:aqua">M</span>atias</h3>
+            </a>
+
+        </div>
         <ul>
-            <li><a>PROJECTS</a></li>
-            <li><a>ABOUT</a></li>
-            <li><a>CONTACT ME</a></li>
+            <li><a href=#my-projects>PROJECTS</a></li>
+            <li><a href="#about-me">ABOUT</a></li>
+            <li><a href="#foot-contact">CONTACT</a></li>
         </ul>
+        <div id="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
     </nav>
+
+    <!--MENU FOR MOBILE SCREENS-->
+
+    <div id="mobile-nav">
+        <ul>
+            <li><a href=#my-projects>PROJECTS</a></li>
+            <li><a href="#about-me">ABOUT</a></li>
+            <li><a href="#foot-contact">CONTACT</a></li>
+        </ul>
+    </div>
 
     <main>
         <div id="intro-text-area">
             <h1>MATIAS, A WEB <br>
                 DEVELOPER <span>_</span>
             </h1>
-            <h4>I solve problems of both backend and fronted nature</h4>
-            <div id="cta-button">
-                <button id="call-to-action">EXPLORE</button>
-            </div>
+            <h4>Empowering you with problem-solving web development</span></h4>
+        </div>
+
+        <div id="cta-button">
+            <button id="call-to-action" onclick="navigateToMyProjects()">EXPLORE</button>
+
         </div>
 
         <div id="my-picture-area">
@@ -50,7 +71,8 @@
     <section id="my-projects">
         <h2>MY LATEST PROJECTS</h2>
         <p class="my-projects-intro-p">
-            These are my latest projects built using <span>Scrum</span> as a work methodology. I have learnt a lot from
+            These are my latest projects built using <span>Scrum</span> as a work methodology. I have learnt a lot
+            from
             working with
             them
             because I took care of all stages: planing, design, front and back end.
@@ -59,7 +81,8 @@
             For these projects of course I used <span>Html</span>, <span>Css</span> & <span>Javascript</span>. My
             language for the backend in
             these cases was
-            <span>Python</span>. I use <span>Flask</span> for the API and <span>BeautifulSoup</span> to parse the data
+            <span>Python</span>. I use <span>Flask</span> for the API and <span>BeautifulSoup</span> to parse the
+            data
             for the websites as needed
         </p>
 
@@ -69,14 +92,17 @@
                 <h3>ICEGAS</h3>
 
                 <p>Icegas is a website to see the prices of fuel in Iceland </p>
-                <button class="visit">Visit site</button>
+                <button class="visit" onclick="window.location.href='http://www.icegas.is'">GO TO SITE</button>
+
+
             </div>
 
             <div id="card-bubble" class="project-container">
                 <img src="images/projects/bubble.jpg">
                 <h3>BUBBLE SORT</h3>
                 <p>This project is a visualizer of the bubble sort algorithm</p>
-                <button class="visit">Visit site</button>
+                <button class="visit" onclick="window.location.href=
+                        'https://matias-cavalcante.github.io/bubbleSortWebApp/'">GO TO SITE</button>
             </div>
 
             <div id="card-qatar" class="project-container">
@@ -85,31 +111,39 @@
 
                 <p>This projects is a World Cup Qatar 2022 results visualizer
                 </p>
-                <button class="visit">Visit site</button>
+                <button class="visit"
+                    onclick="window.location.href='https://matias-cavalcante.github.io/qatar22-groups-results/'">GO TO
+                    SITE</button>
+
             </div>
         </section>
     </section>
-
-
 
     <section id="about-me">
         <img src="images/projects/trip.png">
         <div id="about-me-text">
             <h2>I AM A DEVELOPER FROM ARGENTINA WHOSE MAIN FOCUS IN WEB DEVELOPMENT</h2>
-            <p>I came to Iceland in the year 2018 and I have been specially in the last two years,
-                putting a lot of effort to in my free and available time keep learning and building
-                things so that I can display my skills, show the value I could bring in colaborating
-                with others and of couse, improve my skills.
+            <p>
+                I have been in Iceland for about 5 years now and while keeping up with life in general, I have
+                continued learning and building projects to show my skills and maybe while doing so partner up with
+                you to colaborate on some awesome projects or ideas!</p>
+
+            <p>I did mentioned some of the technologies i used in my projects shown above, but I need to add to it
+                some experience working with <span>MySQL</span> & <span>SQLite3</span>
             </p>
         </div>
     </section>
-    <footer>
+
+    <footer id="foot-contact">
         <h4 id="connect">LET´S GET IN TOUCH!</h4>
         <ul>
-            <img src="images/icons/message.png">
-            <img src="images/icons/linkedin.png">
-            <img src="images/icons/github.png">
+            <li><a href="mailto:matias.cavalcante93@gmail.com"><img src="images/icons/message.png" alt="Email"></a></li>
+            <li><a href="https://www.linkedin.com/in/matias-cavalcante-372571120"><img src="images/icons/linkedin.png"
+                        alt="Linkedin"></a></li>
+            <li><a href="https://github.com/matias-cavalcante?tab=repositories"><img src="images/icons/github.png"
+                        alt="Github"></a></li>
         </ul>
+
         <h4>Matias Cavalcante ©</h4>
     </footer>
 
