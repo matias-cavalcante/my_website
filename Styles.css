@@ -34,18 +34,31 @@ h4 {
 /*--------NAV----------*/
 
 #hamburger {
+    height: 2em;
     font-size: 1.9em;
     display: none;
     z-index: 9999;
 }
 
 nav {
-    width: 70%;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    backdrop-filter: blur(3px) saturate(139%);
+    -webkit-backdrop-filter: blur(3px) saturate(139%);
+    background-color: rgba(0, 0, 0, 0.56);
 }
+
+nav div a h3:hover {
+    color: #65C7CF;
+}
+
 
 nav div,
 nav ul {
     width: 50%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 nav div a {
@@ -141,7 +154,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-bottom: 5px;
-    margin-top: 2.6%;
+    margin-top: 4em;
 }
 
 /*LEFT HALF main*/
@@ -282,13 +295,16 @@ span {
 #cards {
     display: flex;
     justify-content: space-between;
-    margin-top: 5%;
+    margin-top: 30px;
+    padding: 15px;
+    background-image: radial-gradient(circle 726.8px at 10% 20%, rgb(5, 26, 30) 0%, rgba(100, 69, 96, 0.99) 100.2%);
 }
 
 #card-qatar,
 #card-bubble,
 #card-icegas {
     opacity: 0;
+    background-image: linear-gradient(180deg, rgba(38, 107, 126, 0.98) 2%, rgba(6, 6, 6, 1) 57.1%);
 }
 
 .animate #card-qatar {
@@ -308,8 +324,6 @@ span {
     display: inline-block;
     padding-bottom: 15px;
     border-radius: 10px;
-    background-color: black;
-    box-shadow: 1px 0 2px #043539, -1px 0 5px #043539, 1px 0 8px #043539, -1px 0 11px #043539;
 }
 
 
@@ -395,7 +409,7 @@ span {
 
 
 #about-me-text h2 {
-    color: #65C7CF
+    color: #65C7CF;
 }
 
 #about-me-text p {
@@ -444,13 +458,25 @@ footer h4 {
     margin-right: 5px;
 }
 
+#img-container {
+    height: 50%;
+    width: 30%;
+}
+
 
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 1160px) {
     nav {
-        width: 90%;
+        width: 100%;
     }
+
+    nav ul,
+    nav div {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
 
     nav ul li a {
         margin-left: 0px;
@@ -515,7 +541,8 @@ footer h4 {
     .project-container {
         width: 50%;
         max-width: 265px;
-        margin-top: 10%;
+        margin-top: 4%;
+        margin-bottom: 4%;
     }
 
     #about-me {
@@ -550,6 +577,7 @@ footer h4 {
     }
 
     footer {
+        width: 90%;
         flex-direction: column;
         align-items: center;
     }
@@ -589,7 +617,7 @@ footer h4 {
 
 @media screen and (max-width: 400px) {
     .project-container {
-        min-height: 315px;
+        min-height: 250px;
         max-width: unset;
         width: 90%;
     }
