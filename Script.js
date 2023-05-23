@@ -30,3 +30,27 @@ function navigateToMyProjects() {
     location.href = "#my-projects";
 }
 
+
+window.onload = function() {
+    var bars = document.getElementsByClassName('bar');
+    for (var i = 0; i < bars.length; i++) {
+      bars[i].style.width = "100%";
+    }
+  };
+
+  window.addEventListener('scroll', function() {
+    var barSection = document.getElementById('barSection');
+    var position = barSection.getBoundingClientRect();
+    // checking whether fully visible
+    if(position.top < window.innerHeight && position.bottom > 0) {
+        var bars = barSection.getElementsByClassName('bar');
+        for (var i = 0; i < bars.length; i++) {
+            bars[i].classList.add('animate');
+        }
+    }
+});
+
+
+
+  
+

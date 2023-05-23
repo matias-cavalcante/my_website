@@ -21,6 +21,11 @@ body {
     color: white;
 }
 
+h2 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
 a:hover,
 button:hover {
     cursor: pointer;
@@ -37,13 +42,13 @@ h4 {
     height: 2em;
     font-size: 1.9em;
     display: none;
-    z-index: 9999;
+    color: white;
 }
 
 nav {
     width: 100%;
     position: fixed;
-    z-index: 10000;
+    z-index: 9999;
     backdrop-filter: blur(3px) saturate(139%);
     -webkit-backdrop-filter: blur(3px) saturate(139%);
     background-color: rgba(0, 0, 0, 0.56);
@@ -73,11 +78,10 @@ nav div a h3 {
 
 nav ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 nav ul a {
-    margin-left: 20px;
     font-weight: 300;
     text-decoration: none;
     color: white;
@@ -95,7 +99,6 @@ nav ul li {
     height: 100vh;
     width: 100%;
     position: fixed;
-    z-index: 1000;
     visibility: hidden;
     opacity: 0;
 
@@ -126,7 +129,6 @@ nav ul li {
     margin: 0px;
     padding: 0px;
     list-style: none;
-
 }
 
 #mobile-nav ul li {
@@ -149,12 +151,12 @@ nav ul li {
 
 main {
     width: 70%;
-    min-height: 80vh;
+    height: 90vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    margin-bottom: 5px;
-    margin-top: 4em;
+    margin-top: 10vh;
+
 }
 
 /*LEFT HALF main*/
@@ -206,7 +208,8 @@ main {
     border-radius: 8px;
     font-size: 0.9em;
     color: white;
-    background-image: radial-gradient(circle 897px at 9% 80.3%, #490E43 0%, white 100.2%);
+    /*background-image: radial-gradient(circle 897px at 9% 80.3%, #490E43 0%, white 100.2%);*/
+    background-color: #850a31;
     animation: buttonChangeShape;
     animation-duration: 3s;
     animation-iteration-count: 1;
@@ -214,7 +217,7 @@ main {
 }
 
 #call-to-action:hover {
-    background-image: radial-gradient(circle 897px at 9% 80.3%, #77056c 0%, white 100.2%);
+    background-image: radial-gradient(circle 897px at 9% 80.3%, #8c163b 0%, white 100.2%);
 }
 
 /*RIGHT HALF main*/
@@ -275,8 +278,20 @@ main {
 #my-projects {
     width: 70%;
     margin-top: 5vh;
-    margin-bottom: 5px;
+    margin-bottom: 5vh;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: black;
 }
+
+
+
+#my-projects-text {
+    margin-bottom: 5%;
+}
+
 
 #my-projects h2 {
     width: 100%;
@@ -285,6 +300,7 @@ main {
 
 .my-projects-intro-p {
     width: 100%;
+    text-align: justify;
     font-size: 1.1em;
 }
 
@@ -292,19 +308,77 @@ span {
     color: #65C7CF;
 }
 
+#my-projects-top-content {
+    margin-bottom: 5%;
+}
+
+#my-stack {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin-block-end: 1em;
+    margin-bottom: 5%;
+}
+
+
+#stack-icons-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.falling-icon {
+    animation: fall 1s forwards;
+    opacity: 0;
+}
+
+.falling-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.falling-icon:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.falling-icon:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.falling-icon:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.falling-icon:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
 #cards {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
-    padding: 15px;
-    background-image: radial-gradient(circle 726.8px at 10% 20%, rgb(5, 26, 30) 0%, rgba(100, 69, 96, 0.99) 100.2%);
 }
 
 #card-qatar,
 #card-bubble,
 #card-icegas {
     opacity: 0;
-    background-image: linear-gradient(180deg, rgba(38, 107, 126, 0.98) 2%, rgba(6, 6, 6, 1) 57.1%);
+    background-image: linear-gradient(180deg, rgba(23, 74, 88, 0.98) 2%, rgba(6, 6, 6, 1) 57.1%);
 }
 
 .animate #card-qatar {
@@ -324,6 +398,8 @@ span {
     display: inline-block;
     padding-bottom: 15px;
     border-radius: 10px;
+    box-shadow: 0 0 1px #0083B0, 0 0 2px #0083B0, 0 0 6px #0083B0, 0 0 9px #0083B0;
+
 }
 
 
@@ -352,12 +428,12 @@ span {
     border-radius: 5px;
     padding-top: 8px;
     padding-bottom: 8px;
-    background-image: radial-gradient(circle 897px at 9% 80.3%, #490E43 0%, rgb(202, 195, 195) 100.2%);
+    background-image: radial-gradient(circle 897px at 9% 80.3%, #850a31 0%, rgb(202, 195, 195) 100.2%);
     color: white;
 }
 
 .visit:hover {
-    background-image: radial-gradient(circle 897px at 9% 80.3%, #77056c 0%, rgb(202, 195, 195) 100.2%);
+    background-image: radial-gradient(circle 897px at 9% 80.3%, #8c163b 0%, rgb(202, 195, 195) 100.2%);
 }
 
 @keyframes cardThreeIn {
@@ -397,16 +473,12 @@ span {
     margin-top: 5vh;
     margin-bottom: 5px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
-#about-me img {
-    align-self: center;
-    max-width: 20%;
-    max-height: 175px;
-    min-width: 200px;
+#about-me-text {
+    width: 70%;
 }
-
 
 #about-me-text h2 {
     color: #65C7CF;
@@ -462,6 +534,53 @@ footer h4 {
     height: 50%;
     width: 30%;
 }
+
+
+
+.container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10%;
+}
+
+.bar {
+    width: 0;
+    height: 2em;
+    margin-bottom: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: width 2s;
+    text-align: center;
+    line-height: 2em;
+    overflow: hidden;
+    background: #00B4DB;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #0083B0, #00B4DB);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #0083B0, #00B4DB);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#bar1 {
+    transition-delay: 0s;
+}
+
+#bar2 {
+    transition-delay: 2s;
+}
+
+#bar3 {
+    transition-delay: 4s;
+}
+
+#bar4 {
+    transition-delay: 6s;
+}
+
 
 
 /*MEDIA QUERIES*/
@@ -536,6 +655,8 @@ footer h4 {
 
     #my-projects {
         width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .project-container {
@@ -547,11 +668,18 @@ footer h4 {
 
     #about-me {
         width: 90%;
-        flex-direction: column-reverse;
+        flex-wrap: wrap;
     }
 
-    #about-me img {
-        align-self: center;
+    #about-me-text {
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        padding-left: 0;
     }
 }
 
@@ -566,6 +694,7 @@ footer h4 {
     #hamburger {
         display: flex;
         justify-content: end;
+        align-items: center;
     }
 
     .project-container {

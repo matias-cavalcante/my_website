@@ -29,7 +29,7 @@
 
         </div>
         <ul>
-            <li><a href=#my-projects>PROJECTS</a></li>
+            <li><a href=#my-projects>MY WORK</a></li>
             <li><a href="#about-me">ABOUT</a></li>
             <li><a href="#foot-contact">CONTACT</a></li>
         </ul>
@@ -42,7 +42,7 @@
 
     <div id="mobile-nav">
         <ul>
-            <li><a href=#my-projects>PROJECTS</a></li>
+            <li><a href=#my-projects>MY WORK</a></li>
             <li><a href="#about-me">ABOUT</a></li>
             <li><a href="#foot-contact">CONTACT</a></li>
         </ul>
@@ -50,14 +50,14 @@
 
     <main>
         <div id="intro-text-area">
-            <h1>MATIAS, A WEB <br>
+            <h1>MATIAS, WEB <br>
                 DEVELOPER <span>_</span>
             </h1>
-            <h4>Empowering you with problem-solving web development</span></h4>
+            <h4>Empowering your business with problem-solving web development</span></h4>
         </div>
 
         <div id="cta-button">
-            <button id="call-to-action" onclick="navigateToMyProjects()">EXPLORE</button>
+            <button id="call-to-action" onclick="navigateToMyProjects()">SEE MORE</button>
 
         </div>
 
@@ -69,18 +69,33 @@
     </main>
 
     <section id="my-projects">
-        <h2>MY LATEST PROJECTS</h2>
-        <p class="my-projects-intro-p">
-            These are my latest projects built practicing <span>Scrum</span>. I have learnt a lot
-            developing these projects
-            because I took care of all stages: planing, design, front and back end.
-        </p>
-        <p class="my-projects-intro-p">
-            I used <span>Html</span>, <span>Css</span> & <span>Javascript</span>. For the backend i used
-            <span>Python</span>. <span>Flask</span> for the API and <span>BeautifulSoup</span> to parse the
-            data
-            for the websites as needed
-        </p>
+        <section id="my-projects-top-content">
+            <div id="my-projects-text">
+                <h2>HOW I WORK</h2>
+                <p class="my-projects-intro-p">
+                    I create both backend and front end solutions, combining the technologies in my stack with my
+                    work methodologies and my experience developing software, ensuring mantainability and flexibility.
+                </p>
+            </div>
+
+            <div id="my-stack">
+                <h2>MY STACK</h2>
+                <p>These are the main technologies in my stack, used synergistically to bring value to my solutions
+                    by reducing complexity and maximizing efficiency in all cases
+                </p>
+                <div id="stack-icons-box">
+                    <img class="falling-icon" src="images/icons/technologies/icons8-html-48.png">
+                    <img class="falling-icon" src="images/icons/technologies/icons8-css-48.png">
+                    <img class="falling-icon" src="images/icons/technologies/icons8-javascript-48.png">
+                    <img class="falling-icon" src="images/icons/technologies/icons8-python-48.png">
+                    <img class="falling-icon" src="images/icons/technologies/icons8-mysql-48.png">
+                </div>
+            </div>
+            <h2>MY LATEST PROJECTS</h2>
+        </section>
+
+
+
 
         <section id="cards">
             <div id="card-icegas" class="project-container">
@@ -113,18 +128,22 @@
     </section>
 
     <section id="about-me">
-        <img src="images/projects/trip.png">
         <div id="about-me-text">
-            <h2>I AM A DEVELOPER FROM ARGENTINA WHOSE MAIN FOCUS IS WEB</h2>
+            <h2>I AM A DEVELOPER STRONGLY FOCUSED ON WEB</h2>
             <p>
-                I have been in Iceland for about 5 years, and while keeping up with life in general, I have
-                continued learning and building projects to show my skills and maybe while doing, team up with people to
-                colaborate on different projects or ideas!</p>
-
-            <p>I did mentioned some of the technologies i use, but I need to add to it
-                some experience working with <span>MySQL</span> & <span>SQLite</span>
+                I am a web developer, originally from Argentina. In 2018, I embarked on a new chapter in Iceland with my
+                wife and son. Despite a non-tech job, I'm determined to continue the software journey I started back
+                home. I'm constantly learning and refining my skills, which is evident in my projects. I'm open to
+                collaborations for creating innovative, high-quality solutions. Let's build something amazing together!
             </p>
         </div>
+        <div class="container">
+            <div class="bar" id="bar1">STARTED SOFTWARE JOURNEY</div>
+            <div class="bar" id="bar2">2018 - ARGENTINA → ICELAND</div>
+            <div class="bar" id="bar3">CONTINUE SOFTWARE JOURNEY</div>
+            <div class="bar" id="bar4">OPEN TO TALK MORE</div>
+        </div>
+
     </section>
 
     <footer id="foot-contact">
