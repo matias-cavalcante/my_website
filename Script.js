@@ -16,20 +16,10 @@ document.querySelectorAll('#mobile-nav a').forEach(function(link) {
     link.addEventListener('click', toggleMenu);
   });
   
-  window.addEventListener('scroll', function() {
-    var cardSection = document.getElementById('cards');
-    var position = cardSection.getBoundingClientRect();
-    // checking whether fully visible
-    if(position.top < window.innerHeight && position.bottom > 0) {
-        cardSection.classList.add('animate');
-    }
-});
-
 function navigateToMyProjects() {
     // perform any action you need here
     location.href = "#my-projects";
 }
-
 
 window.onload = function() {
     var bars = document.getElementsByClassName('bar');
@@ -38,7 +28,7 @@ window.onload = function() {
     }
   };
 
-  window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function() {
     var barSection = document.getElementById('barSection');
     var position = barSection.getBoundingClientRect();
     // checking whether fully visible

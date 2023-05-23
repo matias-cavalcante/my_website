@@ -10,6 +10,7 @@ html {
 body,
 nav,
 #my-picture-area {
+    width: 100%;
     max-width: 1280px;
     display: flex;
     align-items: center;
@@ -46,16 +47,11 @@ h4 {
 }
 
 nav {
-    width: 100%;
     position: fixed;
     z-index: 9999;
     backdrop-filter: blur(3px) saturate(139%);
     -webkit-backdrop-filter: blur(3px) saturate(139%);
     background-color: rgba(0, 0, 0, 0.56);
-}
-
-nav div a h3:hover {
-    color: #65C7CF;
 }
 
 
@@ -74,6 +70,10 @@ nav div a h3 {
     font-size: 1em;
     font-weight: 300;
     color: white;
+}
+
+nav div a h3:hover {
+    color: #65C7CF;
 }
 
 nav ul {
@@ -101,6 +101,7 @@ nav ul li {
     position: fixed;
     visibility: hidden;
     opacity: 0;
+    z-index: 1000;
 
     backdrop-filter: blur(16px) saturate(120%);
     -webkit-backdrop-filter: blur(16px) saturate(120%);
@@ -109,7 +110,6 @@ nav ul li {
     transform: translateY(-100%);
     transition: transform 0.5s ease, visibility 0s 0.5s, opacity 0.5s linear;
 }
-
 
 #mobile-nav.active {
     transform: translateY(0);
@@ -126,8 +126,6 @@ nav ul li {
     justify-content: space-between;
     position: relative;
     top: 20%;
-    margin: 0px;
-    padding: 0px;
     list-style: none;
 }
 
@@ -156,7 +154,6 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-top: 10vh;
-
 }
 
 /*LEFT HALF main*/
@@ -259,17 +256,10 @@ main {
 @keyframes buttonChangeShape {
     0% {
         opacity: 0;
-        left: 50%;
     }
 
     50% {
         opacity: 1;
-        left: 0%;
-        box-shadow: 2px 0px 3px #913387, -2px 0px 3px #913387, 0px 2px 3px #913387, 0px -2px 3px #913387;
-    }
-
-    100% {
-        box-shadow: none;
     }
 }
 
@@ -286,12 +276,10 @@ main {
     background-color: black;
 }
 
-
-
+#my-projects-top-content,
 #my-projects-text {
     margin-bottom: 5%;
 }
-
 
 #my-projects h2 {
     width: 100%;
@@ -308,10 +296,6 @@ span {
     color: #65C7CF;
 }
 
-#my-projects-top-content {
-    margin-bottom: 5%;
-}
-
 #my-stack {
     display: flex;
     justify-content: start;
@@ -321,13 +305,13 @@ span {
     margin-bottom: 5%;
 }
 
-
 #stack-icons-box {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
+/*Animations icons*/
 .falling-icon {
     animation: fall 1s forwards;
     opacity: 0;
@@ -365,32 +349,9 @@ span {
     }
 }
 
-
-
-
-
 #cards {
     display: flex;
     justify-content: space-between;
-}
-
-#card-qatar,
-#card-bubble,
-#card-icegas {
-    opacity: 0;
-    background-image: linear-gradient(180deg, rgba(23, 74, 88, 0.98) 2%, rgba(6, 6, 6, 1) 57.1%);
-}
-
-.animate #card-qatar {
-    animation: cardThreeIn 1s 0.5s forwards;
-}
-
-.animate #card-bubble {
-    animation: cardTwoIn 1s 1s forwards;
-}
-
-.animate #card-icegas {
-    animation: cardOneIn 1s 1.5s forwards;
 }
 
 .project-container {
@@ -399,9 +360,7 @@ span {
     padding-bottom: 15px;
     border-radius: 10px;
     box-shadow: 0 0 1px #0083B0, 0 0 2px #0083B0, 0 0 6px #0083B0, 0 0 9px #0083B0;
-
 }
-
 
 .project-container p,
 .visit {
@@ -421,7 +380,6 @@ span {
     font-size: 1.1em;
 }
 
-
 .visit {
     width: 90%;
     border: 0;
@@ -434,36 +392,6 @@ span {
 
 .visit:hover {
     background-image: radial-gradient(circle 897px at 9% 80.3%, #8c163b 0%, rgb(202, 195, 195) 100.2%);
-}
-
-@keyframes cardThreeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes cardTwoIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes cardOneIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }
 
 /*--------ABOUT ME ----------*/
@@ -487,6 +415,49 @@ span {
 #about-me-text p {
     font-size: 1.1em;
     color: white;
+}
+
+.container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10%;
+}
+
+.bar {
+    width: 0;
+    height: 2em;
+    margin-bottom: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15navpx;
+    transition: width 2s;
+    text-align: center;
+    line-height: 2em;
+    overflow: hidden;
+    background: #00B4DB;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #0083B0, #00B4DB);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #0083B0, #00B4DB);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#bar1 {
+    transition-delay: 0s;
+}
+
+#bar2 {
+    transition-delay: 2s;
+}
+
+#bar3 {
+    transition-delay: 4s;
+}
+
+#bar4 {
+    transition-delay: 6s;
 }
 
 /*--------FOOTER ----------*/
@@ -520,7 +491,6 @@ footer ul img {
     left: 0%;
 }
 
-
 footer h4 {
     left: 0%;
 }
@@ -529,58 +499,6 @@ footer h4 {
     margin-left: 5px;
     margin-right: 5px;
 }
-
-#img-container {
-    height: 50%;
-    width: 30%;
-}
-
-
-
-.container {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 10%;
-}
-
-.bar {
-    width: 0;
-    height: 2em;
-    margin-bottom: 10px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    transition: width 2s;
-    text-align: center;
-    line-height: 2em;
-    overflow: hidden;
-    background: #00B4DB;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #0083B0, #00B4DB);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #0083B0, #00B4DB);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-#bar1 {
-    transition-delay: 0s;
-}
-
-#bar2 {
-    transition-delay: 2s;
-}
-
-#bar3 {
-    transition-delay: 4s;
-}
-
-#bar4 {
-    transition-delay: 6s;
-}
-
 
 
 /*MEDIA QUERIES*/
@@ -595,7 +513,6 @@ footer h4 {
         margin-left: 5%;
         margin-right: 5%;
     }
-
 
     nav ul li a {
         margin-left: 0px;
@@ -685,7 +602,6 @@ footer h4 {
 
 /*break here to next section*/
 
-
 @media screen and (max-width: 660px) {
     nav ul {
         display: none;
@@ -710,19 +626,6 @@ footer h4 {
         flex-direction: column;
         align-items: center;
     }
-
-    .animate #card-qatar {
-        animation: cardThreeIn 1s 1.5s forwards;
-    }
-
-    .animate #card-bubble {
-        animation: cardTwoIn 1s 1s forwards;
-    }
-
-    .animate #card-icegas {
-        animation: cardOneIn 1s 0.5s forwards;
-    }
-
 }
 
 @media screen and (max-width: 575px) {
