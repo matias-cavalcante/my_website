@@ -21,24 +21,38 @@ function navigateToMyProjects() {
     location.href = "#my-projects";
 }
 
-window.onload = function() {
-    var bars = document.getElementsByClassName('bar');
-    for (var i = 0; i < bars.length; i++) {
-      bars[i].style.width = "100%";
+window.addEventListener('scroll', function() {
+    var iconSection = document.querySelector('#stack-icons-box'); // Use querySelector to get the first matching element
+    var position = iconSection.getBoundingClientRect();
+    // checking whether fully visible
+    if(position.top >= 0 && position.bottom <= window.innerHeight) {
+        var icons = iconSection.querySelectorAll('.falling-icon'); // Use querySelectorAll to get all matching elements
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].classList.add('falling-animation');
+        }
+    } else {
+        var icons = iconSection.querySelectorAll('.falling-icon'); // Use querySelectorAll to get all matching elements
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].classList.remove('falling-animation');
+        }
     }
-  };
+});
+
+
+
 
 window.addEventListener('scroll', function() {
-    var barSection = document.getElementById('barSection');
+    var barSection = document.querySelector('.container'); // Use querySelector to get the first matching element
     var position = barSection.getBoundingClientRect();
     // checking whether fully visible
-    if(position.top < window.innerHeight && position.bottom > 0) {
-        var bars = barSection.getElementsByClassName('bar');
+    if(position.top >= 0 && position.bottom <= window.innerHeight) {
+        var bars = barSection.querySelectorAll('.bar'); // Use querySelectorAll to get all matching elements
         for (var i = 0; i < bars.length; i++) {
             bars[i].classList.add('animate');
         }
     }
 });
+
 
 
 
