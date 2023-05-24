@@ -2,7 +2,6 @@
 function toggleMenu() {
     const navbar = document.getElementById("mobile-nav");
     const body = document.body;
-    
     if (navbar.classList.contains('active')) {
         navbar.classList.remove('active');
         body.classList.remove('disable-scroll');
@@ -28,17 +27,17 @@ window.addEventListener('scroll', function() {
     if(position.top >= 0 && position.bottom <= window.innerHeight) {
         var icons = iconSection.querySelectorAll('.falling-icon'); // Use querySelectorAll to get all matching elements
         for (var i = 0; i < icons.length; i++) {
+            icons[i].style.animationDelay = i * 0.4 + 's'; // Add a delay to each icon based on its position
             icons[i].classList.add('falling-animation');
         }
     } else {
         var icons = iconSection.querySelectorAll('.falling-icon'); // Use querySelectorAll to get all matching elements
         for (var i = 0; i < icons.length; i++) {
+            icons[i].style.animationDelay = '0s'; // Reset the delay
             icons[i].classList.remove('falling-animation');
         }
     }
 });
-
-
 
 
 window.addEventListener('scroll', function() {

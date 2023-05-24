@@ -317,14 +317,12 @@ span {
 
 /*Animations icons*/
 .falling-icon {
-    animation: fall 1s forwards;
     opacity: 0;
 }
 
 .falling-animation {
     animation: fall 1s forwards;
 }
-
 
 @keyframes fall {
     0% {
@@ -400,6 +398,7 @@ span {
 
 #about-me-text {
     width: 70%;
+    padding-left: 10%;
 }
 
 #about-me-text h2 {
@@ -417,7 +416,6 @@ span {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 10%;
 }
 
 .bar {
@@ -425,8 +423,6 @@ span {
     opacity: 0;
     height: 2em;
     margin-bottom: 10px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
     transition: width 2s, opacity 2s;
     /* Include opacity in the transition */
     text-align: center;
@@ -450,15 +446,15 @@ span {
 }
 
 #bar2 {
-    transition-delay: 2s;
+    transition-delay: 1s;
 }
 
 #bar3 {
-    transition-delay: 4s;
+    transition-delay: 2s;
 }
 
 #bar4 {
-    transition-delay: 6s;
+    transition-delay: 3s;
 }
 
 /*--------FOOTER ----------*/
@@ -586,10 +582,12 @@ footer h4 {
     #about-me {
         width: 90%;
         flex-wrap: wrap;
+        flex-direction: column-reverse;
     }
 
     #about-me-text {
         width: 100%;
+        padding-left: 0;
     }
 
     .container {
@@ -645,4 +643,7 @@ footer h4 {
         text-align: start;
     }
 
+    #my-projects-top-content {
+        margin-bottom: 5vh;
+    }
 }
